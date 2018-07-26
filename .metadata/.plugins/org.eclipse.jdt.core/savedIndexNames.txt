@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\McDon\Documents\Projets\Livre_musical\.metadata\.plugins\org.eclipse.jdt.core

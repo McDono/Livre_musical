@@ -2,6 +2,16 @@ package package_1;
 
 import java.util.Scanner;
 
+/*-------------------NOTE--------------------
+ * Ecrire la fonction resistanceEqPara
+ * Ecrire la fonction calculerResistancesPagesNormalisees
+ * Optimiser les fonctions avec les metodes length afin d'eviter de passer l'argument nombreDePage
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 
 public class algorithme_resistance {
 
@@ -31,7 +41,7 @@ public class algorithme_resistance {
 		calculerTensions(tensions, tensionMax, nombreDePage);
 		calculerResistancesEq(resistEq, tensions, tensionAlim, resistanceFixe, nombreDePage);
 		calculerResistancesPagesIdeales(nombreDePage, resistanceFixe, resistEq, resistIdeal);
-		//calculerResistancesPagesNormalisee();
+		//calculerResistancesPagesNormalisees();
 		
 		//afficherAll();
 		
@@ -66,12 +76,23 @@ public class algorithme_resistance {
 	
 	public static void calculerResistancesPagesIdeales(int nombreDePage, float resistanceFixe, float resistEq[], float resistIdeal[])
 	{
-		//Calcul les rï¿½sistances idï¿½ales (non normalisï¿½es, sans prendre en compte le parc de resistance possï¿½dï¿½) de chaque pages nï¿½cessaires pour atteindre les resistances ï¿½quivalentes en cumulant les pages
+		//Calcul les resistances ideales (non normalisess, sans prendre en compte le parc de resistance possedee) de chaque pages necessaires pour atteindre les resistances ï¿½quivalentes en cumulant les pages
 		resistIdeal[0] = resistEq[nombreDePage-1];
 		for(int i = 1; i < nombreDePage; i++)
 		{
 			resistIdeal[i] = (float) arrondi((resistEq[nombreDePage - i] * resistEq[nombreDePage-1-i]) / (resistEq[nombreDePage - i] - resistEq[nombreDePage-1-i]), 2);
 		}
+	}
+	
+	public static void calculerResistancesPagesNormalisees(float parcResistance[], float resistIdeal)
+	{
+		
+	}
+	
+	public static float resistanceEqPara(float Req)
+	{
+		//Renvoie la paire de resistance necessaire à l'obtention de Req
+		
 	}
 
 	public static void afficherPages(int nombreDePage)
@@ -109,7 +130,7 @@ public class algorithme_resistance {
 			System.out.print(resistIdeal[i] + "\t");
 		}
 	}
-	
+
 	
 	public static float req2(float R1, float R2)
 	{
