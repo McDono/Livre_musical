@@ -15,9 +15,10 @@ import java.util.Scanner;
 
 public class algorithme_resistance {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
-		//Dï¿½claration des variables
+		//Delaration des variables
 		int nombreDePage = 0;
 		long resistParc[] = new long[100]; //A remplir
 		Scanner sc = new Scanner(System.in);
@@ -36,7 +37,7 @@ public class algorithme_resistance {
 		System.out.println("Nombre de page du livre : ");
 		nombreDePage = sc.nextInt();
 		sc.nextLine();
-		System.out.println("Calcul des rï¿½sistances pour un livre de " + nombreDePage + " pages.");
+		System.out.println("Calcul des resistances pour un livre de " + nombreDePage + " pages.");
 		
 		calculerTensions(tensions, tensionMax, nombreDePage);
 		calculerResistancesEq(resistEq, tensions, tensionAlim, resistanceFixe, nombreDePage);
@@ -84,16 +85,16 @@ public class algorithme_resistance {
 		}
 	}
 	
-	public static void calculerResistancesPagesNormalisees(float parcResistance[], float resistIdeal)
+	/*public static void calculerResistancesPagesNormalisees(float parcResistance[], float resistIdeal)
 	{
 		
-	}
+	}*/
 	
-	public static float resistanceEqPara(float Req)
+	/*public static float resistanceEqPara(float Req)
 	{
 		//Renvoie la paire de resistance necessaire à l'obtention de Req
 		
-	}
+	}*/
 
 	public static void afficherPages(int nombreDePage)
 	{
@@ -107,7 +108,7 @@ public class algorithme_resistance {
 	public static void afficherTensions(float tensions[], int nombreDePage)
 	{
 		System.out.print("\nTensions :" + "\t\t\t");
-		for(int i = 0; i < nombreDePage; i++)
+		for(int i = 0; i < tensions.length; i++)
 		{
 			System.out.print(tensions[i] + "\t");
 		}
